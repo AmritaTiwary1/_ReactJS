@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-   <h1>ReactJS</h1>
+   <h3>App.jsx fn is exported to main.jsx  </h3>
    <Example></Example>
    </>
   )

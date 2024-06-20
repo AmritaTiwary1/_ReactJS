@@ -53,7 +53,12 @@ const reactElement = {
 const mainContainer = document.querySelector('#root');
 
 //Now , rendering(adding things) in root
-customRender(reactElement,mainContainer)
 
+customRender(reactElement,mainContainer) 
+/* here, we have written our own custom render but In react, there is inbuild fn root.render(...) which takes fn( <Apps><Apps/>....) and convert it into object and then render it , just like our customRender is doing
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <App />
+);
 
 

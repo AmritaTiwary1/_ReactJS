@@ -1,6 +1,6 @@
 function Example() {
    return(
-   <h1>example.js FUNCTION</h1>
+   <h3>example.js FUNCTION is exported to App.jsx</h3>
    ) 
 }
 
