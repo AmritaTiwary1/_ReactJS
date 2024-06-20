@@ -1,32 +1,32 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 
-// function MyApp(){
-//     return(
-//         <div>
-//             <h3>This fn is Written inside main.jsx file</h3>
-//         </div>
-//     )
-// }  
+function MyApp(){
+    return(
+        <div>
+            <h3>This fn is Written inside main.jsx file</h3>
+        </div>
+    )
+}  
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//     <>
-//    <App></App>
-//     <MyApp></MyApp> </> 
-//     /* If we write function in this current file and use it in render section, it will work properly
-//    Question Arises => MyApp is a function , then MyApp() should be written in .render section but <MyApp/> is working properly , why ?? & how ??
-//    Answer => this file is .jsx , which converts all the code in a bundLe , with the help of bundler , that bundler can be bable ..or something else 
-//     */
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <>
+   <App></App>
+    <MyApp></MyApp> </> 
+    /* If we write function in this current file and use it in render section, it will work properly
+   Question Arises => MyApp is a function , then MyApp() should be written in .render section but <MyApp/> is working properly , why ?? & how ??
+   Answer => this file is .jsx , which converts all the code in a bundLe , with the help of bundler , that bundler can be bable ..or something else 
+   */ 
     
-//     // MyApp()  // ----> if we write this function , then also , Our page give us expected output
+    // MyApp()  // ----> if we write this function , then also , Our page give us expected output
  
 
-// )
+)
 
-
+/*
 // ---------------------------------Passing object(intead of component) to .render section ------------------------------
-//******************************And understanding the rendering process by trial  */
+// ******************************And understanding the rendering process by trial  
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -51,6 +51,10 @@ children : 'click me to visit google'
 
 // when .render fn renders any components, or object, it divides it into four parts  
 // And dividing the fn done with the help with the help of react.createElement fn
+// Babble by default inject React.createElement() on the components received i.e <App></App>
+//in this way , DOM get all content in the form of 4 parts
+//Thatswhy , it is prohibited to insert evaluation code i.e -> if(true) .... in return code section , bcoz when babble convert it into 4 parts, it cant understand expressions 
+
 const ValueWithoutkey = React.createElement(
  
   'a', //{I} any tag name can be written here
@@ -61,7 +65,7 @@ const ValueWithoutkey = React.createElement(
   },
 
  'click me to visit google'  // {III} this is text that is to be written inside that tag 
-// {IV} 4th part is empty here , fourth part is props value
+// {IV} 4th part is empty here , fourth part is props value , or variable
 )
 
 const DirectlyHTMLCode = (<a href='https://google.com' target='_blank'> click here</a>)
@@ -74,3 +78,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ValueWithoutkey //----> working correctly
 )
+*/
