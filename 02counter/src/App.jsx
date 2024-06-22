@@ -16,10 +16,10 @@ function App() {
  <h1>Reactjs Deep Dive</h1>
  <h2>Counter Value : {counter}</h2>
 
- <button onClick={add} >ADD VALUE </button>
+ <button onClick={add} >ADD VALUE {counter}</button>
  <br />
  <br />
- <button onClick={remove} >REMOVE BUTTON</button>
+ <button onClick={remove} >REMOVE BUTTON {counter}</button>
  </>
  )
 }
