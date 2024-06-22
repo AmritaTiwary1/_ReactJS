@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
+import {jsx as _jsx} from "react/jsx-runtime.js" // using this statement, we can replace react.createElement by jsx , but it has some complexity/issues, to know more,can visit react github repo/packages/react/src/jsx
 function MyApp(){
     return(
         <div>
