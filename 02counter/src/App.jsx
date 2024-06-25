@@ -60,3 +60,36 @@ let [counter,setCounter]=useState(1);
  )
 }
 export default App 
+
+/*
+//HW . write above code in such a way where add cant happen after 10 , and remove cant go down 0
+
+import { useState } from "react";
+
+function App(){
+  
+  const add = () => {
+    console.log(counter) 
+    if (counter <10) 
+    setCounter(counter+1)
+  }
+  function remove(){
+    console.log(counter); 
+    if(counter>0){
+    counter--;
+    setCounter(counter)
+    }
+  }
+  return(
+ <>
+ <h1>Reactjs Deep Dive</h1>
+ <h2>Counter Value : {counter}</h2>
+
+ <button onClick={add} >ADD VALUE {counter}</button>
+ <br />
+ <br />
+ <button onClick={remove} >REMOVE BUTTON {counter}</button>
+ </>
+ )
+}
+export default App */
