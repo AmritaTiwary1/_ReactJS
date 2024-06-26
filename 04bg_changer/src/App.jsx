@@ -19,6 +19,10 @@ function App() {
       <button onClick={ ()=> setColor('blue')} className='outline-none px-4 py-1 rounded-full text-white' style={{backgroundColor: "blue"}}>blue</button>    
 {/* here, in onclick, we have written a fn first, then inside it, we are calling setColor fn , it will work perfectly fine unlike previous btn */}
 
+{/* <button onClick={setColor} className='outline-none px-4 py-1 rounded-full text-white' style={{backgroundColor: "yellow"}}>yellow</button>    
+above btn will ot show any changes bcoz reference of fn setColor is passed, it will not make any changes, instead it will take the previous value of set color */}
+
+
       <button onClick={ ()=> setColor('yellow')} className='outline-none px-4 py-1 rounded-full text-white' style={{backgroundColor: "yellow"}}>yellow</button>    
       
       <button onClick={ ()=> setColor('black')} className='outline-none px-4 py-1 rounded-full text-white' style={{backgroundColor: "black"}}>black</button>
