@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useRef } from 'react'
 import { useCallback } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -25,6 +25,8 @@ export default function ProductPage({ productId, referrer, theme }) {
     });
   }, [productId, referrer]); ----->dependencies are passed in form of array
 */
+
+const passwordRef = useRef(null)
   
   const passwordGenerator = useCallback( ()=>{
           let pass = ""
@@ -68,6 +70,21 @@ setPassword(pass)
 }
 */
 
+// const copyPasswordToClip = useCallback(()=>{
+// passwordRef.current?.select()  //it will select the whole passwordRef i.e-- password value
+// passwordRef.current?.setSelectionRange(0,4)  //it will overwrite old select method & select only prescribed range , there r many more properties related to this, btt it is not needed this time
+// window.navigator.clipboard.writeText(password)  //In react, window.navigator keyword contain information about visitor's browser
+// },[password])
+
+ //************************************************************************* */
+ //WHAT IF copyPasswordToClip fn IS WRITTEN WITHOUT useCallback
+
+ const copyPasswordToClip =()=>{
+  passwordRef.current?.select() 
+  // passwordRef.current?.setSelectionRange(0,4) 
+   window.navigator.clipboard.writeText(password)
+ }
+
   useEffect(()=> { 
     passwordGenerator()
   },[length , numberAllowed,charAllowed])   //after writing useEffect , without even doing any changes to dependencies ,instead,during loading
@@ -85,8 +102,10 @@ setPassword(pass)
     className='outline-none w-full py-1 px-3'
     placeholder='password'
     readOnly
+    ref={passwordRef} 
+     
     />
-    <button className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
+    <button onClick={copyPasswordToClip} className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
   </div>
   <div className='flex text-sm gap-x-2'>
     <div className='flex items-center gap-x-1'>
@@ -96,7 +115,7 @@ setPassword(pass)
       value={length}
       className='cursor-pointer'
      onChange={(e)=>{
-           setLength(e.target.value)  }}
+           setLength(e.target.value)  }}     
    />
 <label>Length :{length}</label>
     </div>
