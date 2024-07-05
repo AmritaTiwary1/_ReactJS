@@ -1,4 +1,4 @@
-/*
+
 // CHANGING THE VARIABLE VALUE THROUGH FUNCTION IS NOT WORKING PROPERLY , WITHOUT USING HOOKS
 function App() {
   let counter = 5;
@@ -16,6 +16,8 @@ function App() {
  <h2>Counter Value : {counter}</h2>
 
  <button onClick={add} >ADD VALUE {counter}</button>
+ <h2> After onclick fn's line : {counter}</h2>
+
  <br />
  <br />
  <button onClick={remove} >REMOVE BUTTON {counter}</button>
@@ -23,7 +25,7 @@ function App() {
  )
 }
 export default App
-*/
+/*
 
 //NOW , USING HOOKS(READ GITHUB REPO ON REACT TO KNOW MORE ABOUT HOOKS)
 
