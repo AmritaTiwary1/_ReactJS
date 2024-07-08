@@ -1,5 +1,8 @@
 //THIS API IS NOT WORKING , BUT INSTEAD , I AM WRITING TO REVISE MY CONCEPT ON HOW TO DEAL WITH APIS AND HOW TO MAKE CUSTOM HOOK
 
+// we are directly accessing useCurrencyInfo file (API fetching happening here)
+// in the App.jsx and from there, we are passing all variables as a prop to Component/InputBox.jsx
+
 import { useEffect,useState } from "react";
 
 function useCurrencyInfo(currency){ 
