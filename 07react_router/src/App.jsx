@@ -9,7 +9,7 @@ function App() {
   return (
     <>
 
-<h1>hi</h1>
+<h1 className='bg-green-600 p-4 mx-9 ' >REACT ROUTER</h1>
 </>
   )
 }
