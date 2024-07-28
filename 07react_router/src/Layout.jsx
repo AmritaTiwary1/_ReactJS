@@ -11,7 +11,7 @@ export default function Layout() {
   return (
     <>
     <Header></Header>
-    <Outlet></Outlet> 
+   <Outlet></Outlet>     {/*This outlet will take Layout as base of the web */}
     <Footer></Footer>
     </>
   )
