@@ -61,7 +61,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 //Another & common way of routing ------------------ to understand below code, first read all comments & code written above 
 
 const any_Var_name = createBrowserRouter(
-
+ 
   createRoutesFromElements(
 
     //Below, we nested(made children) layout route , If there is nesting present, then in the Layout component , there must be a <Outlet/> , which will change according to paths 
