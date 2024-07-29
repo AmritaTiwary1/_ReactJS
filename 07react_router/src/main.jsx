@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Home from './components/Home/Home.jsx'
 import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
-import Github from './components/Github/Github.jsx'
+import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 import GithubHome from './components/Github/GithubHome.jsx'
 import GithubAbout from './components/Github/GithubAbout.jsx'
 
@@ -63,14 +63,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 const any_Var_name = createBrowserRouter(
 
   createRoutesFromElements(
-    <Route path="/" element={<Layout/>}>
+
+    //Below, we nested(made children) layout route , If there is nesting present, then in the Layout component , there must be a <Outlet/> , which will change according to paths 
+    <Route path="/" element={<Layout/>}>    
 
            <Route path='' element={<Home/>}></Route>
-           <Route path='about' element={<About/>}></Route>
+          <Route path='about' element={<About/>}></Route>      {/*Nesting of routes automatically give '/' in URL ==> https:localhost:5173/about */}
            <Route path='contact' element={<Contact/>}></Route>
            <Route path='user/:userid' element={<User/>}></Route>       {/* Here, the things which will be wrtten after user/: is important , bcoz it stores info of every user eg. my github account have diiferent info , other user have different info          */}
-           <Route path='github' element={<Github/>}>
-                  <Route path='githubhome' element={<GithubHome/>}></Route>
+          
+           {/* Below, we nested(made children) Github route , If there is nesting present, then in the Github component , there must be a <Outlet/> , which will change according to paths  */}
+           <Route 
+         
+         // loader={()=>{fetch ........}} WE CAN EVEN CALL API IN LOADER SECTION OR WE CAN CALL THE FN WHERE API CALLING IS HAPPENING .   Each route can define a "loader" function to provide data to the route element before it renders.As the user navigates around the Github Navigation Link, the loaders for the next matching branch of routes will be called in parallel and their data made available to components through useLoaderData
+         loader={githubInfoLoader}
+         
+          path='github' 
+           element={<Github/>}>
+                  <Route path='githubhome' element={<GithubHome/>}></Route>        {/*Nesting of routes automatically give '/' in URL ==> http://localhost:5173/github/githubabout */}
                   <Route path='githubabout' element={<GithubAbout/>}></Route>
 
            </Route>
@@ -79,6 +89,7 @@ const any_Var_name = createBrowserRouter(
    
 
 )
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
