@@ -1,9 +1,7 @@
 import React from 'react'
 
 export default function ThemeBtn() {
-    
-
-    return (
+      return (
         <label className="relative inline-flex items-center cursor-pointer">
             <input
                 type="checkbox"
