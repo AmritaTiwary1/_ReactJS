@@ -6,7 +6,10 @@ but , Link just update required portion on the DOM , DOM doesnt reload
 
 => NavLink has special features than Link , which really helps in NAVBAR area of DOM
 It takes to="" attribute which is visible in URL name ,eg----https://www.myApp.com/aboutNavBar , smthing like this
-In the className attribute of Navbar,react-dom-router allows to write fn --- <NavLink to="/about" className={({isActive})=>write styles then ${isActive ? "write those styles in this variable injecting syntax which should be visible only when that NAVBAR TAB is active eg.red" : "write those styles which should be shown in deactive state for eg.white"} after closing of curly braces, write styles which applies in both situation ie -active/de-active` ></Navbar>} 
+In the className attribute of Navbar,react-dom-router allows to write fn --- <NavLink to="/about" className={({isActive})=>write 
+styles then ${isActive ? "write those styles in this variable injecting syntax which should be visible only when that NAVBAR TAB is
+active eg.red" : "write those styles which should be shown in deactive state for eg.white"} after closing of curly braces, write styles
+which applies in both situation ie -active/de-active` ></Navbar>} 
 Here , isActive is a variable , and we pass variable inside return() keyword in {} curly braces , ==> className={( {isActive} )} 
 */
 
@@ -25,13 +28,15 @@ export default function Header() {
                   <div className="flex items-center lg:order-2">
                       <Link
                           to="#"
-                          className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                          className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm
+                        px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                       >
                           Log in
                       </Link>
                       <Link
                           to="#"
-                          className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                          className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium 
+                        rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                       >
                           Get started
                       </Link>
@@ -43,7 +48,8 @@ export default function Header() {
                       <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                           <li>
                               <NavLink to=""
-                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200 border-b border-gray-100 hover:bg-gray-50 
+                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"}
+                                  duration-200 border-b border-gray-100 hover:bg-gray-50 
                                   lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`}
                     
                               >
@@ -52,7 +58,8 @@ export default function Header() {
                       </li>
                       <li>
                               <NavLink to="about"
-                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200 border-b border-gray-100 hover:bg-gray-50 
+                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} 
+                                  duration-200 border-b border-gray-100 hover:bg-gray-50 
                                   lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`}
                     
                               >  
@@ -61,7 +68,8 @@ export default function Header() {
                       </li>
                       <li>
                               <NavLink to="contact"
-                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200 border-b border-gray-100 hover:bg-gray-50 
+                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200
+                                  border-b border-gray-100 hover:bg-gray-50 
                                   lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`}
                     
                               >
@@ -70,7 +78,8 @@ export default function Header() {
                       </li>
                       <li>
                               <NavLink to="github"
-                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200 border-b border-gray-100 hover:bg-gray-50 
+                                  className={({isActive})=>`block py-2 pr-4 pl-3 ${isActive?"text:red-700":"text:grey-700"} duration-200
+                                  border-b border-gray-100 hover:bg-gray-50 
                                   lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`}
                     
                               >
